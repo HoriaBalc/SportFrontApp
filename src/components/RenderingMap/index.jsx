@@ -35,7 +35,7 @@ const RenderingMap = (props) => {
   //const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
   const [accept, setAccept] = useState(false);
   props.func(distance);
-
+  props.funcCoord(coords);
   if (!isLoaded) return <div>Loading...</div>;
 
   window.onload = GetPosition;
@@ -60,23 +60,26 @@ const RenderingMap = (props) => {
       console.log(altitude);
     };
     if (active) {
-      let a = document.querySelector("#map");
-      let b = document.createElement("MarkerF");
-      b.position = { center };
-      setCoords((oldArray) => [...oldArray, center]);
-      if (coords.length > 1) {
-        let d = computeDistance(
-          coords[coords.length - 2].lat,
-          coords[coords.length - 1].lat,
-          coords[coords.length - 2].lng,
-          coords[coords.length - 1].lng
-        );
-        setDistance(distance + d * 1000);
-        console.log(d + " " + distance);
+      if (props.status === 1) {
+        let a = document.querySelector("#map");
+        let b = document.createElement("MarkerF");
+        b.position = { center };
+        setCoords((oldArray) => [...oldArray, center]);
+        if (coords.length > 1) {
+          let d = computeDistance(
+            coords[coords.length - 2].lat,
+            coords[coords.length - 1].lat,
+            coords[coords.length - 2].lng,
+            coords[coords.length - 1].lng
+          );
+          setDistance(distance + d * 1000);
+          console.log(d + " " + distance);
+        }
+
+        //b.label=
+        a.appendChild(b);
+        console.log("added");
       }
-      //b.label=
-      a.appendChild(b);
-      console.log("added");
     }
 
     navigator.geolocation.getCurrentPosition(geoSuccess, error, options);

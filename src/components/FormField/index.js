@@ -10,6 +10,6 @@ export const useStyles = makeStyles((theme) => ({
     marginRight: 0,
     outline: "none",
     color: "#FFFFFF ",
-    width: "50%",
+    width: "70%",
   },
 }));

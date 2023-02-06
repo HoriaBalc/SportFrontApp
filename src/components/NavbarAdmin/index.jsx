@@ -13,19 +13,19 @@ import {
   Avatar,
   Menu,
   MenuItem,
-  Icon,
 } from "@material-ui/core";
 import { VscAccount, VscHistory, VscHome } from "react-icons/vsc";
-import { useNavigate } from "react-router-dom";
-import { MediaQuery } from "@mantine/core";
+import { FaUsers } from "react-icons/fa";
+import { FcSportsMode } from "react-icons/fc";
 import Logo from "../../images/pngwing.com.png";
+import { useNavigate } from "react-router-dom";
 
-const Navbar = (props) => {
+const NavbarAdmin = (props) => {
   const classes = useStyles();
   const [value, setValue] = useState(props.page);
+  const navigate = useNavigate();
   const [anchorElUser, setAnchorElUser] = useState(null);
   const [anchorElUserMobile, setAnchorElUserMobile] = useState(null);
-  const navigate = useNavigate();
 
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
@@ -42,19 +42,18 @@ const Navbar = (props) => {
   const handleCloseUserMobileMenu = () => {
     setAnchorElUserMobile(null);
   };
-
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
-  const handleHome = () => {
-    navigate("/main");
+  const handleSports = () => {
+    navigate("/admin/sports");
   };
-  const handleHistory = () => {
-    navigate("/history");
+  const handleUsers = () => {
+    navigate("/admin/users");
   };
   const handleProfile = () => {
-    navigate("/editProfile");
+    navigate("/admin/editProfile");
   };
 
   const handleLogOut = () => {
@@ -68,8 +67,14 @@ const Navbar = (props) => {
         <AppBar position="fixed" className={classes.appBarMobile}>
           <Toolbar className={classes.toolBar}>
             <img alt="logo" src={Logo} className={classes.logo} />
-
             <Box className={classes.boxButtons}></Box>
+            {/* <Button
+              className={classes.button}
+              onClick={handleProfile}
+              //sx={{ my: 2, color: "white", display: "block" }}
+            >
+              Logout
+            </Button> */}
             <Box>
               <Tooltip
                 title="Open settings mobile"
@@ -117,17 +122,49 @@ const Navbar = (props) => {
         >
           <BottomNavigationAction
             className={classes.bottomNavigationAction}
-            label="Home"
-            value="home"
-            icon={<VscHome className={classes.icon} />}
-            onClick={handleHome}
+            label="Sports"
+            value="sports"
+            icon={
+              <svg
+                className={classes.icon}
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                version="1"
+                viewBox="0 0 48 48"
+                enable-background="new 0 0 48 48"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle fill="currentColor" cx="28" cy="9" r="5"></circle>
+                <path
+                  fill="currentColor"
+                  d="M29,27.3l-9.2-4.1c-1-0.5-1.5,1-2,2c-0.5,1-4.1,7.2-3.8,8.3c0.3,0.9,1.1,1.4,1.9,1.4c0.2,0,0.4,0,0.6-0.1 L28.8,31c0.8-0.2,1.4-1,1.4-1.8C30.2,28.4,29.7,27.6,29,27.3z"
+                ></path>
+                <path
+                  fill="currentColor"
+                  d="M26.8,15.2l-2.2-1c-1.3-0.6-2.9,0-3.5,1.3L9.2,41.1c-0.5,1,0,2.2,1,2.7c0.3,0.1,0.6,0.2,0.9,0.2 c0.8,0,1.5-0.4,1.8-1.1c0,0,9.6-13.3,10.4-14.9s4.9-9.3,4.9-9.3C28.7,17.4,28.2,15.8,26.8,15.2z"
+                ></path>
+                <path
+                  fill="currentColor"
+                  d="M40.5,15.7c-0.7-0.8-2-1-2.8-0.3l-5,4.2l-6.4-3.5c-1.1-0.6-2.6-0.4-3.3,0.9c-0.8,1.3-0.4,2.9,0.8,3.4 l8.3,3.4c0.3,0.1,0.6,0.2,0.9,0.2c0.5,0,0.9-0.2,1.3-0.5l6-5C41.1,17.8,41.2,16.6,40.5,15.7z"
+                ></path>
+                <path
+                  fill="currentColor"
+                  d="M11.7,23.1l3.4-5.1l4.6,0.6l1.5-3.1c0.4-0.9,1.2-1.4,2.1-1.5c-0.1,0-0.2,0-0.2,0h-9c-0.7,0-1.3,0.3-1.7,0.9 l-4,6c-0.6,0.9-0.4,2.2,0.6,2.8C9.2,23.9,9.6,24,10,24C10.6,24,11.3,23.7,11.7,23.1z"
+                ></path>
+              </svg>
+            }
+            // {/* <FcSportsMode className={classes.icon} />  */}
+            onClick={handleSports}
           />
           <BottomNavigationAction
             className={classes.bottomNavigationAction}
-            label="History"
-            value="history"
-            icon={<VscHistory className={classes.icon} />}
-            onClick={handleHistory}
+            label="Users"
+            value="users"
+            icon={<FaUsers className={classes.icon} />}
+            onClick={handleUsers}
           />
           <BottomNavigationAction
             className={classes.bottomNavigationAction}
@@ -151,17 +188,17 @@ const Navbar = (props) => {
             <Box className={classes.boxButtons}>
               <Button
                 className={classes.button}
-                onClick={handleHome}
+                onClick={handleSports}
                 //sx={{ my: 2, color: "white", display: "block" }}
               >
-                Home
+                Sports
               </Button>
               <Button
                 className={classes.button}
-                onClick={handleHistory}
+                onClick={handleUsers}
                 //sx={{ my: 2, color: "white", display: "block" }}
               >
-                History
+                Users
               </Button>
               {/* <Button
                 className={classes.button}
@@ -169,9 +206,8 @@ const Navbar = (props) => {
                 //sx={{ my: 2, color: "white", display: "block" }}
               >
                 Profile
-              </Button> */}
-
-              {/* <Button
+              </Button>
+              <Button
                 className={classes.button}
                 onClick={handleLogOut}
                 //sx={{ my: 2, color: "white", display: "block" }}
@@ -220,4 +256,4 @@ const Navbar = (props) => {
   );
 };
 
-export default Navbar;
+export default NavbarAdmin;

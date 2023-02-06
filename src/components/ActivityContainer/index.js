@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core";
 
 export const useStyles = makeStyles((theme) => ({
   formContainer: {
-    width: "6rem",
+    width: "8rem",
     //height: "2rem",
     //outline: "none",
     padding: 0,
@@ -12,11 +12,11 @@ export const useStyles = makeStyles((theme) => ({
     marginRight: "0.8rem",
     position: "relative",
     "& .MuiOutlinedInput-input": {
-      padding: "0.5rem 1rem 0.5rem 0rem",
+      padding: "0.5rem 1.75rem 0.5rem 0rem",
     },
   },
 
-  select: { padding: 0 },
+  select: { padding: "0rem 1rem 0rem 0rem" },
   selectPosition: {
     alignItems: "right",
     textAlign: "right",

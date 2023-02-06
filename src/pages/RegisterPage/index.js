@@ -3,11 +3,35 @@ import { makeStyles } from "@material-ui/core";
 export const useStyles = makeStyles((theme) => ({
   form: {
     height: window.innerHeight,
+    width: "100%",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
     margin: "auto",
+    marginTop: "2rem",
+    marginBottom: "3rem",
+  },
+
+  paragraph: {
+    padding: 0,
+    margin: 0,
+    fontSize: 12,
+    color: "red",
+    position: "relative",
+    top: "-0.4rem",
+    // left: "10px",
+  },
+
+  link: { color: "#18A558", decorations: "none" },
+
+  eror404: {
+    padding: 0,
+    margin: 0,
+    fontSize: 14,
+    color: "red",
+    position: "relative",
+    top: "0.2rem",
   },
 
   mainContainer: {
@@ -17,7 +41,7 @@ export const useStyles = makeStyles((theme) => ({
   },
 
   container: {
-    width: "90%",
+    width: "100%",
     height: "100%",
     display: "flex",
     position: "relative",
@@ -41,7 +65,7 @@ export const useStyles = makeStyles((theme) => ({
     "&.MuiButton-contained": {
       color: "#ffffff",
     },
-    width: "50%",
+    width: "10rem",
     padding: "10px 0px",
     borderRadius: "100px 100px 100px 100px",
     cursor: "pointer",
@@ -72,10 +96,10 @@ export const useStyles = makeStyles((theme) => ({
     marginRight: 0,
     outline: "none",
     color: "#FFFFFF ",
-    //width: "50%",
+    width: "15rem",
   },
 
   datePicker: {
-    width: "90%",
+    width: "15rem",
   },
 }));

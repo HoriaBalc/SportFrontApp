@@ -9,8 +9,8 @@ export const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "center",
     margin: "auto",
-    marginTop: "5rem",
-    marginBottom: "5rem",
+    marginTop: "4rem",
+    marginBottom: "4rem",
   },
   paragraph: {
     padding: 0,

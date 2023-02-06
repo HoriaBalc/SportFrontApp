@@ -12,20 +12,17 @@ const MainPage = () => {
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
   });
-  const [center, setCenter] = useState({ lat: 0, lng: 0 });
-  const [coords, setCoords] = useState([]);
-  const [distance, setDistance] = useState(0.0);
+
   //const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
-  const [accept, setAccept] = useState(false);
 
   if (!isLoaded) return <div>Loading...</div>;
 
   return (
     <div>
-      <Navbar></Navbar>
+      <Navbar page="home" />
       <div className={classes.App}>
         <ActivityContainer></ActivityContainer>
-        <button className="permission-granted-button">accept</button>
+        {/* <button className="permission-granted-button">accept</button> */}
         {/* <RenderingMap /> */}
       </div>
     </div>

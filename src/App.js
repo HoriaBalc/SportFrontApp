@@ -11,6 +11,18 @@ import LoginPage from "./pages/LoginPage/index.jsx";
 import MainPage from "./pages/MainPage/index.jsx";
 import EditProfilePage from "./pages/EditProfilePage/index.jsx";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core";
+import HistoryPage from "./pages/HistoryPage/index.jsx";
+import ActivityDetail from "./pages/ActivityDetailPage/index.jsx";
+import AdminSportsPage from "./pages/AdminSportsPage/index.jsx";
+import AdminUsersPage from "./pages/AdminUsersPage/index.jsx";
+import AdminEditProfilePage from "./pages/AdminEditProfile/index.jsx";
+
+// import {
+//   AuthenticatedTemplate,
+//   UnauthenticatedTemplate,
+//   useMsal,
+// } from "@azure/msal-react";
+//import { loginRequest } from "./authConfig";
 
 const theme = createMuiTheme({
   palette: {
@@ -40,6 +52,7 @@ const theme = createMuiTheme({
     fontWeightBold: 700,
   },
 });
+
 function App() {
   return (
     <div className="App">
@@ -48,11 +61,37 @@ function App() {
           <Routes>
             <Route exact path={routes.register} element={<RegisterPage />} />
             <Route exact path={routes.login} element={<LoginPage />} />
+            {/* <AuthenticatedTemplate> */}
             <Route exact path={routes.main} element={<MainPage />} />
+            {/* </AuthenticatedTemplate> */}
+            <Route
+              exact
+              path={routes.adminSports}
+              element={<AdminSportsPage />}
+            />
+            <Route
+              exact
+              path={routes.adminUsers}
+              element={<AdminUsersPage />}
+            />
+
+            <Route exact path={routes.history} element={<HistoryPage />} />
+            <Route
+              exact
+              path={routes.activityDetail}
+              element={<ActivityDetail />}
+            />
+
             <Route
               exact
               path={routes.editProfile}
               element={<EditProfilePage />}
+            />
+
+            <Route
+              exact
+              path={routes.adminEditProfile}
+              element={<AdminEditProfilePage />}
             />
           </Routes>
         </Router>

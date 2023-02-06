@@ -3,11 +3,32 @@ import { makeStyles } from "@material-ui/core";
 export const useStyles = makeStyles((theme) => ({
   form: {
     height: window.innerHeight,
+    width: "100%",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
     margin: "auto",
+  },
+
+  paragraph: {
+    padding: 0,
+    margin: 0,
+    fontSize: 12,
+    color: "red",
+    position: "relative",
+    top: "-0.4rem",
+    // left: "10px",
+  },
+
+  erorLogin: {
+    padding: 0,
+    margin: 0,
+    fontSize: 14,
+    color: "red",
+    position: "relative",
+    top: "0.2rem",
+    // left: "10px",
   },
 
   mainContainer: {
@@ -17,7 +38,7 @@ export const useStyles = makeStyles((theme) => ({
   },
 
   container: {
-    width: "90%",
+    width: "100%",
     height: "100%",
     display: "flex",
     position: "relative",
@@ -41,7 +62,7 @@ export const useStyles = makeStyles((theme) => ({
     "&.MuiButton-contained": {
       color: "#ffffff",
     },
-    width: "50%",
+    width: "10rem",
     padding: "10px 0px",
     borderRadius: "100px 100px 100px 100px",
     cursor: "pointer",
@@ -61,7 +82,7 @@ export const useStyles = makeStyles((theme) => ({
     },
     color: "#18A558",
   },
-
+  link: { color: "#18A558", decorations: "none" },
   input: {
     padding: "0px 10px",
     borderBottom: "1px solid transparent",
@@ -72,6 +93,8 @@ export const useStyles = makeStyles((theme) => ({
     marginRight: 0,
     outline: "none",
     color: "#FFFFFF ",
+    width: "15rem",
+
     //width: "50%",
   },
 }));

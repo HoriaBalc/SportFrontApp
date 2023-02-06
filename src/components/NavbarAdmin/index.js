@@ -2,7 +2,8 @@ import { makeStyles } from "@material-ui/core";
 
 export const useStyles = makeStyles((theme) => ({
   toolBar: { minHeight: "3rem" },
-
+  menuMobile: { width: "8rem" },
+  menuPc: { width: "8rem" },
   bottomNavigation: {
     width: "100%",
     bottom: 0,
@@ -11,29 +12,11 @@ export const useStyles = makeStyles((theme) => ({
     right: 0,
     minHeight: "3rem",
     zIndex: 2,
-    display: "block",
+    display: "flex",
   },
-
-  menuMobile: { width: "8rem" },
-  menuPc: { width: "8rem" },
 
   bottomNavigationAction: {
     margin: 0,
-  },
-  logo: {
-    width: "3rem",
-    justifyContent: "center",
-    display: "flex",
-  },
-  boxButtons: {
-    //display: "flex",
-    //justifyContent: "center",
-    flexGrow: 1,
-    //alignItems: "center",
-  },
-
-  appBarMobile: {
-    display: "block",
   },
 
   root: {
@@ -46,6 +29,17 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
 
+  boxButtons: {
+    //display: "flex",
+    //justifyContent: "center",
+    flexGrow: 1,
+    //alignItems: "center",
+  },
+
+  appBarMobile: {
+    display: "block",
+  },
+
   appBarPC: {
     display: "none",
   },
@@ -53,7 +47,11 @@ export const useStyles = makeStyles((theme) => ({
   icon: {
     fontSize: "1.5rem",
   },
-
+  logo: {
+    width: "3rem",
+    justifyContent: "center",
+    display: "flex",
+  },
   button: {
     "&.MuiButton-contained": {
       color: "#ffffff",
